@@ -27,3 +27,9 @@ def past_days_photos(request,past_date):
         return redirect(photos_of_day)
 
     return render(request, 'all-photos/past-photos.html', {"date":date})
+
+    try:
+        location = location.objects.get(email = 'location')
+        print('location found')
+    except DoesNotExist:
+        print('location was not found')
