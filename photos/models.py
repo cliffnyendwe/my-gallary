@@ -7,3 +7,5 @@ class location(models.Model):
 
     def __str__(self):
         return self.location
+    class Meta:
+        ordering=['location']
