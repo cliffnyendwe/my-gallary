@@ -41,7 +41,7 @@ class Image(models.Model):
     location = models.ForeignKey(location)
     categorys = models.ManyToManyField(categorys, default = True)
     pub_date = models.DateTimeField(auto_now_add=True, null=True)
-    Image_image = models.ImageField(upload_to = 'images/')
+    Photos_photos = models.ImageField(upload_to = 'photos/')
 
     
     def __str__(self):
