@@ -1,4 +1,4 @@
-<!-- {% load bootstrap3 %}
+{% load bootstrap3 %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -7,83 +7,29 @@
     <meta charset="utf-8">
 
     {% if title %}
-    <title>Photos - {{title}}</title>
+    <title>Moringa Tribune - {{title}}</title>
     {% else %}
-    <title> Photos </title>
+    <title> Moringa Tribune </title>
     {% endif %}
 
     {% block styles %}
     {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/basenews.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/basenews.css'%}">
     {% endblock %}
-
 </head>
-
 <body>
-
     {% include 'navbar.html' %}
-    {% block content %} <h1 class="text-center">Photos for {{date|date:"l d-F Y"}}</h1> {%endblock%}
-
-
+    {% block content %} <h1 class='text-center'>photos for {{date|date:"l d-F Y"}}</h1> {%endblock%}
 
     {% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% bootstrap_javascript %}
     {% endblock %}
 </body>
-
-</html> -->
-
-{% load bootstrap3 %}
-{% load static %}
-
-<!DOCTYPE html>
-
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    {% if title %}
-    <title>Gallery - {{title}}</title>
-    {% else %}
-    <title>Gallery</title>
-    {% endif %}
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    {% block styles %}
-    {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    {% endblock %}
-
-  </head>
-  <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    {% include 'navbar.html' %}
-
-    <div id="content">
-      {% block content %}{% endblock %}
-    </div>
-    {% block scripts %}
-    {{block.super}}
-    <script>
-      function copyLink(id) {
-        /* Get the text field */
-        var copyText = document.getElementById("link" + id);
-        /* Select the text field */
-        copyText.select();
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
-    
-      }
-    </script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      {% bootstrap_javascript %}
-    {% endblock %}
-    
-    <script src="" async defer></script>
-  </body>
 </html>
