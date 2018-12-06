@@ -50,10 +50,10 @@ class Image(models.Model):
     class Meta:
         ordering = ['image']
 
-    def save_image(self):
+    def save_photos(self):
         self.save()
 
-    def delete_image(self):
+    def delete_photos(self):
         self.delete()
 
     @classmethod
