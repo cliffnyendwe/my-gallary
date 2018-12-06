@@ -20,14 +20,14 @@ class location(models.Model):
 
     
 # Create my model class for category here.
-class categorys(models.Model):
+class Categorys(models.Model):
     categorys = models.CharField(max_length =40)
 
     def __str__(self):
         return self.category_name
 
     class Meta:
-        ordering = ['category']
+        ordering = ['categorys']
 
     def save_category(self):
         self.save()
@@ -39,22 +39,24 @@ class Image(models.Model):
     name = models.CharField(max_length=20)
     description = models.TextField()
     location = models.ForeignKey(location)
-    categorys = models.ManyToManyField(categorys, default = True)
+    categorys = models.ManyToManyField(Categorys, default = True)
     pub_date = models.DateTimeField(auto_now_add=True, null=True)
-    Photos_photos = models.ImageField(upload_to = 'photos/')
+    Image_image = models.ImageField(upload_to = 'images/')
 
     
     def __str__(self):
         return self.name
 
     class Meta:
-        ordering = ['image']
+        ordering = ['name']
 
-    def save_photos(self):
+    def save_image(self):
         self.save()
 
-    def delete_photos(self):
+    def delete_image(self):
         self.delete()
+
+
 
     @classmethod
     def search_by_category(cls,search_term):

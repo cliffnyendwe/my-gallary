@@ -2,7 +2,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, Http404
 import datetime as dt
-from .models import categorys,Image,location
+from .models import Categorys,Image,location
 
 # Create your views here.
 def welcome(request):
