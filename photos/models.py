@@ -24,10 +24,10 @@ class categorys(models.Model):
     categorys = models.CharField(max_length =40)
 
     def __str__(self):
-        return self.name
+        return self.category_name
 
     class Meta:
-        ordering = ['name']
+        ordering = ['category']
 
     def save_category(self):
         self.save()
@@ -39,7 +39,7 @@ class Image(models.Model):
     name = models.CharField(max_length=20)
     description = models.TextField()
     location = models.ForeignKey(location)
-    category = models.ManyToManyField(Categorys, default = True)
+    categorys = models.ManyToManyField(categorys, default = True)
     pub_date = models.DateTimeField(auto_now_add=True, null=True)
     Image_image = models.ImageField(upload_to = 'images/')
 
@@ -48,12 +48,22 @@ class Image(models.Model):
         return self.name
 
     class Meta:
-        ordering = ['name']
+        ordering = ['image']
 
     def save_image(self):
         self.save()
 
     def delete_image(self):
         self.delete()
+
+    @classmethod
+    def search_by_category(cls,search_term):
+        photos = cls.objects.filter(category__name__icontains=search_term)
+        return photos
+
+    @classmethod
+    def get_by_location(cls,search_term):
+        photos = cls.objects.filter(location__name__icontains=search_term)
+        return photos
 
     
