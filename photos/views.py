@@ -33,7 +33,7 @@ def search_results(request):
     except ObjectDoesNotExist:
       searched_images = []
 
-    return render(request, 'search.html',{'message':message ,'title':title, 'searched_images':searched_images,'locations':locations})
+    return render(request, 'search.html',{'message':message ,'title':title, 'searched_images':searched_images,'locations':locations,})
 
   else:
     message = 'You haven\'t searched for any location'
