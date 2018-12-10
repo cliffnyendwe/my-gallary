@@ -1,7 +1,7 @@
 {% extends "all-photos/base.html" %}
 
 {% block content %}
-<h2 class="animated bounceIn" style="text-align: center">Welcome to my gallary,my photos .</h2>
+<h2 class="animated bounceInLeft" style="text-align: center">Welcome to my gallary,my photos .</h2>
 <ul>
     <li class="nav-item dropdown" style="padding-bottom:40px;font-size:x-large;list-style-type: none;">
         <a class="nav-link dropdown-toggle" href="{% url 'homepage' %}" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -17,54 +17,42 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" style="font-size:large" href="{% url 'homepage' %}">All locations</a>
     </li>
-    <li class="nav-item dropdown" style="padding-bottom:40px;font-size:x-large;list-style-type: none;">
-        <a class="nav-link dropdown-toggle" href="{% url 'homepage' %}" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Select categorys
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            {% if Category %}
-            {% for Category in Category %}
-            <a class="dropdown-item" style="font-size:large" href="{% url 'location' location.id %}">{{Category.Category}}</a>
-            {% endfor %}
-            {% endif %}
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" style="font-size:large" href="{% url 'homepage' %}">All Categorys</a>
-    </li>
 </ul>
-<div class="container">
+
     <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                {% if images %}
-                {% for image in images %}
-
-                <!-- Image -->
-                <img class="gallery-item" src="{{image.image.url}}" style="height:300px;width:520px" alt="{{ image.name }}" data-toggle="modal"
-                    data-target="#a{{ image.id }}">
-            </div>
-
-
-            <div class="modal fade" id="a{{ image.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                    <h5 class="modal-title" id="exampleModalLongTitle">{{image.name}}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+        <!-- <div class="card"> -->
+        {% if images %}
+        <div class="row">
+            {% for image in images %}
+            <div class="col-md-3 col-lg-4">
+                <div class="card">
+                    <img class="gallery-item" src="{{image.image.url}}" style="width:600px;height:400px" alt="{{ image.name }}"
+                        data-toggle="modal" data-target="#a{{ image.id }}">
                 </div>
-                <div class="modal-body">
-                    <div class='image-modal'>
-                        <img src="{{image.image.url}}" style="height:300px;width:520px" alt="{{ image.name }}" data-toggle="modal" data-target="#exampleModalCenter">
+
+
+
+                <div class="modal fade" id="a{{ image.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <h5 class="modal-title" id="exampleModalLongTitle">{{image.name}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <br>
-                    <div class='image'>
-                        {{image.description}}
+                    <div class="modal-body">
+                        <div class='image-modal'>
+                            <img src="{{image.image.url}}" alt="{{ image.name }}" data-toggle="modal" data-target="#exampleModalCenter">
+                        </div>
+                        <br>
+                        <div class='image'>
+                            {{image.description}}
+                        </div>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-    {% endif %}
-    {% endblock %}
+{% endif %}
+{% endblock %}
