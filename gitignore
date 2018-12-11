@@ -1,3 +1,4 @@
 .vscode
 wsgi.py
 virtual/
+.env
