@@ -2,7 +2,7 @@
 By Cliff Nyendwe, 24/11/2018
 
 # Description
-Blog application is a programme where individuals can write thier blogs,be able to comment on them,update them and even delete them.It also gives users and writers an opportunity to subscribe and even sihn up or sign in.
+Gallary is an application where users can view different types of images based on the categories they have chosed.They can also view images based on the location they have also chosen.
 
 # Features
 
@@ -26,7 +26,7 @@ Kindly to access code clone the repository.
 
 # Motivation
 
-To make it easy for people to access all kind of blogs in all field,to educate and alert people on whats going on locally and accross the board.
+To let people be able to access different images/photos.
 
 # Language used
 
