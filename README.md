@@ -15,6 +15,7 @@ Blog application is a programme where individuals can write thier blogs,be able 
 # Live Demo
 
 Run this url link:https://cliffgallary.herokuapp.com/
+
 # Contacts
 To find me, use: cliffnyendwe2018@gmail.com
 0710755176
@@ -81,9 +82,6 @@ whitenoise==4.1.2
 * sudo apt-get install python3.6-venv
 * python3.6 -m venv virtual
 * source virtual/bin/activate
-
-# Live Demo
-The web app can be accessed from the following link https://git.heroku.com/cliff-blog.git
 
 # License
 The project is under license by MIT
