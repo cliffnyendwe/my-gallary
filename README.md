@@ -1,5 +1,5 @@
 # Gallary
-By Cliff Nyendwe, 24/11/2018
+By Cliff Nyendwe, 11/12/2018
 
 # Description
 Gallary is an application where users can view different types of images based on the categories they have chosed.They can also view images based on the location they have also chosen.
