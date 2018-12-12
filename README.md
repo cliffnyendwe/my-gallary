@@ -67,7 +67,7 @@ whitenoise==4.1.2
 * pip install -r requirements.txt
 * On your terminal,Create database gallery using the command below.
 
-# CREATE DATABASE photos;
+### CREATE DATABASE photos;
 
 * Migrate the database using the command below
 
