@@ -1,6 +1,14 @@
 # Gallary
 By Cliff Nyendwe, 11/12/2018
 
+# Django admin username
+Use the username below to get into my admin
+* cliff
+
+### Django admin password
+This is my password
+* cliff123
+
 # Description
 Gallary is an application where users can view different types of images based on the categories they have chosed.They can also view images based on the location they have also chosen.
 
